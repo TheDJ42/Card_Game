@@ -5,8 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Card_Game"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Card Game" Height="323.448" Width="465.46">
     <Grid>
-        
+        <Button x:Name="higher" Content="Higher" HorizontalAlignment="Left" Margin="276,113,0,0" VerticalAlignment="Top" Width="75" Click="createDeck_Click"/>
+        <Button x:Name="lower" Content="Lower" HorizontalAlignment="Left" Margin="276,165,0,0" VerticalAlignment="Top" Width="75" Click="createDeck_Click"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="233,63,0,0" TextWrapping="Wrap" Text="Do you think the next card will be" VerticalAlignment="Top" Width="159"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="305,144,0,0" TextWrapping="Wrap" Text="or" VerticalAlignment="Top"/>
+        <TextBlock x:Name="card" HorizontalAlignment="Left" Margin="39,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="126" Width="141" Text="foo"/>
+
     </Grid>
 </Window>
