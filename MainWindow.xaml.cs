@@ -21,25 +21,36 @@ namespace Card_Game
     public partial class MainWindow : Window
     {
         int[] deck = new int[20];
+        Random r = new Random();
+
 
         public MainWindow()
         {
             InitializeComponent();
-            for ()
-            Random r = new Random();
-            //	Based on Java code from wikipedia:
-            //	http://en.wikipedia.org/wiki/Fisher-Yates_shuffle
-            for (int n = deck.Length - 1; n > 0; --n)
+            for (int i = 1; i <= 19; i++)
             {
-                int k = r.Next(0, deck.Length);
-                int temp = deck[n];
-                deck[n] = deck[k];
-                deck[k] = temp;
+                deck[i] = deck[i - 1] + 1;
+            }
+            Shuffle();
+        }
+        
+
+        private void Shuffle()
+        {
+            for (int x = 1000; x > 0; x--)
+            {
+                //	Based on Java code from wikipedia:
+                //	http://en.wikipedia.org/wiki/Fisher-Yates_shuffle
+                for (int n = deck.Length - 1; n > 0; --n)
+                {
+                    int k = r.Next(0, deck.Length);
+                    int temp = deck[n];
+                    deck[n] = deck[k];
+                    deck[k] = temp;
+                    card.Text = Convert.ToString(deck[0]);
+                }
             }
         }
-
-
-
 
     }
 }
