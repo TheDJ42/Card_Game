@@ -47,7 +47,7 @@ namespace Card_Game
                     int temp = deck[n];
                     deck[n] = deck[k];
                     deck[k] = temp;
-                    card.Text = Convert.ToString(deck[0]);
+                    card.Content = Convert.ToString(deck[0]);
                 }
             }
         }
