@@ -22,7 +22,9 @@ namespace Card_Game
     {
         int[] deck = new int[20];
         Random r = new Random();
-
+        int cardStatus = 0;
+        bool comPare;
+        int score = 0;
 
         public MainWindow()
         {
@@ -32,8 +34,9 @@ namespace Card_Game
                 deck[i] = deck[i - 1] + 1;
             }
             Shuffle();
+            Score.Text = "Score: " + Convert.ToString(score);
         }
-        
+
 
         private void Shuffle()
         {
@@ -47,10 +50,88 @@ namespace Card_Game
                     int temp = deck[n];
                     deck[n] = deck[k];
                     deck[k] = temp;
-                    card.Text = Convert.ToString(deck[0]);
+                    card.Content = Convert.ToString(deck[0]);
+
                 }
+            }
+            UpdateStatus();
+        }
+
+        private void UpdateStatus()
+        {
+            cardStatus++;
+            status.Text = "Card " + Convert.ToString(cardStatus) + " of 20";
+        }
+
+        private void ComPare()
+        {
+            if (comPare == true)
+            {
+                score++;
+                Score.Text = "Score: " + Convert.ToString(score);
+
+            }
+            else
+            {
+                score--;
+                Score.Text = "Score: " + Convert.ToString(score);
+
+                if (score < 0)
+                {
+                    score = 0;
+                    Score.Text = "Score: " + Convert.ToString(score);
+
+                }
+            }
+
+        }
+        private void EndGame()
+        {
+            if (cardStatus == 20)
+            {
+                higher.IsEnabled = false;
+                lower.IsEnabled = false;
+                status.Text = "The Game is now over. Loser.";
             }
         }
 
+        private void higher_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(card.Content) < deck[cardStatus])
+            {
+                comPare = true;
+                ComPare();
+            }
+            else
+            {
+                comPare = false;
+                ComPare();
+            }
+
+            card.Content = Convert.ToString(deck[cardStatus]);
+            UpdateStatus();
+            EndGame();
+
+
+
+        }
+
+        private void lower_Click(object sender, RoutedEventArgs e)
+        {
+            if (Convert.ToInt32(card.Content) > deck[cardStatus])
+            {
+                comPare = true;
+                ComPare();
+            }
+            else
+            {
+                comPare = false;
+                ComPare();
+            }
+
+            card.Content = Convert.ToString(deck[cardStatus]);
+            UpdateStatus();
+            EndGame();
+        }
     }
 }

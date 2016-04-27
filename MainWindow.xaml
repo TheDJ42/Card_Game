@@ -7,11 +7,14 @@
         mc:Ignorable="d"
         Title="Card Game" Height="323.448" Width="465.46">
     <Grid>
-        <Button x:Name="higher" Content="Higher" HorizontalAlignment="Left" Margin="276,113,0,0" VerticalAlignment="Top" Width="75" />
-        <Button x:Name="lower" Content="Lower" HorizontalAlignment="Left" Margin="276,165,0,0" VerticalAlignment="Top" Width="75" />
+        <Button x:Name="higher" Content="Higher" HorizontalAlignment="Left" Margin="276,113,0,0" VerticalAlignment="Top" Width="75" Click="higher_Click" />
+        <Button x:Name="lower" Content="Lower" HorizontalAlignment="Left" Margin="276,165,0,0" VerticalAlignment="Top" Width="75" Click="lower_Click" />
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="233,63,0,0" TextWrapping="Wrap" Text="Do you think the next card will be" VerticalAlignment="Top" Width="159"/>
         <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="305,144,0,0" TextWrapping="Wrap" Text="or" VerticalAlignment="Top"/>
-        <TextBlock x:Name="card" HorizontalAlignment="Left" Margin="39,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="126" Width="141" Text="foo"/>
+        <Label x:Name="card" Content="Foo" HorizontalAlignment="Left" Margin="56,98,0,0" VerticalAlignment="Top" Height="106" Width="122" BorderBrush="Black" BorderThickness="1" FontSize="53.333" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+        <TextBlock x:Name="status" HorizontalAlignment="Left" Margin="56,70,0,0" TextWrapping="Wrap" Text="Card # of #" VerticalAlignment="Top" Width="137"/>
+        <TextBlock x:Name="Score" HorizontalAlignment="Left" Margin="185,10,0,0" TextWrapping="Wrap" Text="Score: Bar" VerticalAlignment="Top" Width="69"/>
+
 
     </Grid>
 </Window>
