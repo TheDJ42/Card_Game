@@ -91,7 +91,14 @@ namespace Card_Game
             {
                 higher.IsEnabled = false;
                 lower.IsEnabled = false;
-                status.Text = "The Game is now over. Loser.";
+                if (score <= 10)
+                {
+                    status.Text = "The Game is now over. Loser.";
+                }
+                else if(score > 10)
+                {
+                    status.Text = "You did alright I guess -_-";
+                }
             }
         }
 
